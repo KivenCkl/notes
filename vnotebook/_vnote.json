@@ -1,0 +1,46 @@
+{
+    "attachment_folder": "_v_attachments",
+    "created_time": "2020-08-04T13:29:35Z",
+    "files": [
+    ],
+    "image_folder": "",
+    "recycle_bin_folder": "_v_recycle_bin",
+    "sub_directories": [
+        {
+            "name": "play_with_server"
+        },
+        {
+            "name": "crawler"
+        },
+        {
+            "name": "data_analysis"
+        },
+        {
+            "name": "go"
+        },
+        {
+            "name": "kaggle"
+        },
+        {
+            "name": "latex"
+        },
+        {
+            "name": "machinery"
+        },
+        {
+            "name": "markdown"
+        },
+        {
+            "name": "matlab"
+        },
+        {
+            "name": "sql"
+        },
+        {
+            "name": "web_blog"
+        }
+    ],
+    "tags": [
+    ],
+    "version": "1"
+}
