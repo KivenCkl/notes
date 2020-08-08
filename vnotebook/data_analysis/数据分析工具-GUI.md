@@ -14,4 +14,4 @@
 
 ## 运行示例
 
-![示例](https://gitee.com/kivenc/chaos/raw/master/upload_images/20200505202227.gif)
+![示例](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808155214.gif)

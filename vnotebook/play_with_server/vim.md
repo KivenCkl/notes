@@ -315,7 +315,7 @@
 | `:sp[lit] {file}`  | 水平切分当前窗口，并在新窗口中载入 `{file}` |
 | `:vsp[lit] {file}` | 垂直切分当前窗口，并在新窗口中载入 `{file}` |
 
-![分割窗口](https://gitee.com/kivenc/upload_images/raw/master/1596864256_20200808131235460_9782.png)
+![分割窗口](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808154031.png)
 
 在窗口间进行切换的命令：
 
@@ -777,16 +777,16 @@ endfunction
 
 在普通模式下操作 `Vim` 拼写检查器的基本命令：
 
-| 命令  | 用途                                 |
-| ----- | ------------------------------------ |
-| `]s`  | 跳到下一处拼写错误                   |
-| `[s`  | 跳到上一处拼写错误                   |
-| `z=`  | 为当前单词提供更正建议               |
-| `zg`  | 把当前单词添加到拼写文件中           |
-| `zw`  | 把当前单词从拼写文件中删除           |
+| 命令  |               用途               |
+| ---- | ------------------------------- |
+| `]s`  | 跳到下一处拼写错误                |
+| `[s`  | 跳到上一处拼写错误                |
+| `z=`  | 为当前单词提供更正建议             |
+| `zg`  | 把当前单词添加到拼写文件中         |
+| `zw`  | 把当前单词从拼写文件中删除         |
 | `zug` | 撤销针对当前单词的 `zg` 或 `zw` 命令 |
 
-![VIM](https://gitee.com/kivenc/upload_images/raw/master/1596864256_20200808132406211_18775.png)
+![VIM](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808152713.png)
 
 [VIM.svg](_v_attachments/20200808132345545_73/VIM.svg)
 

@@ -35,7 +35,7 @@
 
 ### Outlier
 
-![outlier](https://gitee.com/kivenc/upload_images/raw/master/1596861973_20200808124421605_21096.jpg)
+![outlier](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808153314.jpg)
 
 这是经过 Scaling 的坐标数据，可以发现右上角存在一些离群点，去除以后分布比较正常。
 
@@ -43,7 +43,7 @@
 
 对于 Categorical Variable，常用的做法是 `One-Hot encoding`。即对这一变量创建一组新的伪变量，对应其所有可能的取值。这些变量中只有这条数据对应的取值为 1，其他都为 0。
 
-![dummy variables](https://gitee.com/kivenc/upload_images/raw/master/1596861973_20200808124455259_6983.jpg)
+![dummy variables](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808153342.jpg)
 
 要注意，当变量可能取值的范围很大（比如一共有成百上千类）时，这种简单的方法就不太适用了。
 
@@ -53,7 +53,7 @@ Kaggle 比赛是“Feature 为主，调参和 Ensemble 为辅”。Feature Engin
 
 一般来说，当一个变量从直觉上来说对所要完成的目标有帮助，就可以将其作为 Feature。至于它是否有效，最简单的方式就是通过图表来直观感受。
 
-![feature engineering](https://gitee.com/kivenc/upload_images/raw/master/1596861973_20200808124540889_3431.jpg)
+![feature engineering](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808153407.jpg)
 
 ### Feature Selection
 
@@ -171,7 +171,7 @@ Ensemble Learning 是指将多个不同的 Base Model 组合成一个 Ensemble M
 
 相比 Blending，Stacking 能更好地利用训练数据。以 5-Fold Stacking 为例，它的基本原理如图：
 
-![stacking](https://gitee.com/kivenc/upload_images/raw/master/1596861973_20200808124604165_7232.jpg)
+![stacking](https://gitee.com/KivenC/chaos/raw/master/upload_images/20200808153440.jpg)
 
 整个过程很像 Cross Validation。首先将训练数据分为 5 份，接下来一共 5 个迭代，每次迭代时，将 4 份数据作为 Training Set 对每个 Base Model 进行训练，然后在剩下一份 Hold-out Set 上进行预测。同时也要将其在测试数据上的预测保存下来。这样，每个 Base Model 在每次迭代时会对训练数据的其中 1 份做出预测，对测试数据的全部做出预测。5 个迭代都完成以后我们就获得了一个 #训练数据行数 x #Base Model 数量 的矩阵，这个矩阵接下来就作为第二层的 Model 的训练数据。当第二层的 Model 训练完以后，将之前保存的 Base Model 对测试数据的预测（因为每个 Base Model 被训练了 5 次，对测试数据的全体做了 5 次预测，所以对这 5 次求一个平均值，从而得到一个形状与第二层训练数据相同的矩阵）拿出来让它进行预测，就得到最后的输出。
 
