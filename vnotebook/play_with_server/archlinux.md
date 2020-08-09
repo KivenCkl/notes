@@ -75,8 +75,8 @@ mount /dev/sda1 /mnt
 
 ```bash
 mount /dev/sda2 /mnt
-mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mkdir -p /mnt/boot
+mount /dev/sda1 /mnt/boot
 ```
 
 ### 正式安装
@@ -156,10 +156,8 @@ grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # 对于 UEFI 启动模式
-mkdir /boot/efi/EFI/boot
-pacman -S grub-efi-x86_64 efibootmgr os-prober
-grub-install --efi-directory=/boot/efi --bootloader-id=grub
-cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
