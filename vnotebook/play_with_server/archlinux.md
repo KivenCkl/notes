@@ -444,6 +444,16 @@ make: *** [dwm.o] Error 1
     pacman -U xxx.pkg.tar.xz
     ```
 
+### some packages
+
+```text
+sl
+lolcat
+toilet
+neofetch
+tree
+
+```
 
 ## 参考
 
