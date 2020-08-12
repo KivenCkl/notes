@@ -183,7 +183,7 @@ exit
 umount /mnt
 
 # 对于 UEFI 启动方式
-umount /mnt/boot/efi
+umount /mnt/boot
 umount /mnt
 
 reboot
@@ -285,6 +285,12 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch # 清华源
 ```
 
 顺便可以将 `#Color` 这一行取消注释，pacman 将输出彩色信息。
+
+安装 `archlinuxcn-keyring` 包以导入 `GPG key`，否则的话 key 验证失败会无法安装：
+
+```bash
+sudo pacman -S archlinuxcn-keyring
+```
 
 执行 `sudo pacman -Syyu` 进行更新。
 

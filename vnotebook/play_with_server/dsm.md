@@ -1,6 +1,8 @@
 # dsm
 
+## 安装
 
+## 创建共享
 
 ### linux 挂载 nas 盘
 
@@ -51,3 +53,19 @@ sudo mount -t nfs 192.168.2.200:/volume1/SyncFolder /mnt/SyncFolder
 ```bash
 sudo umount -l /mnt/SyncFolder
 ```
+
+## 其它应用
+
+### Syncthing
+
+在套件中心点设置，在套件来源新增 `http://packages.synocommunity.com`
+
+在常规页面选择信任 Synology Inc. 和信任的发行者
+
+在 Beta 源页面打上勾
+
+添加源之后，搜索 Syncthing，点击安装
+
+## 参考
+
+[群晖NAS还能怎么玩？告诉你群晖NAS都有那些玩法](https://zhuanlan.zhihu.com/p/72743343)

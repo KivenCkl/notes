@@ -10,3 +10,4 @@
 
 - 192.168.2.110  Desktop-Win10
 - 192.168.2.20  Hyper-v arch
+- 192.168.2.30 VMware arch
