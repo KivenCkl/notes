@@ -206,14 +206,15 @@ Github 相关：
 
 ```bash
 mkdir ~/.pip
-vim ~/.pip/conf
+vim ~/.pip/pip.conf
 ```
 
 写入以下内容：
 
 ```text
 [global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+#index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+index-url = https://mirrors.aliyun.com/pypi/simple
 [install]
 trusted-host=mirrors.aliyun.com
 ```

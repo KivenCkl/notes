@@ -373,6 +373,36 @@ vmware 使用的是 `xf86-video-vmware`
 sudo pacman -S xorg-server xorg-apps xorg-xinit
 ```
 
+### 安装登录管理器
+
+可选 `sddm`, `lightdm` 等
+
+```bash
+sudo pacman -S sddm sddm-kcm
+sudo systemctl enable sddm
+```
+
+### 安装桌面管理器
+
+可选 `kde-plasma`, 'gnome`, 'deepin`, 'xfce` 等
+
+```bash
+sudo pacman -S plasma kde-applications
+```
+
+### 安装 yakuake 下拉式终端
+
+```bash
+sudo pacman -S yakuake
+```
+
+### 安装文件管理器
+
+```bash
+sudo pacman -S nautilus
+sudo pacman -S ranger
+```
+
 ### 安装 suckless 系列软件
 
 安装 `dwm`
@@ -427,9 +457,67 @@ make: *** [dwm.o] Error 1
     > Note: 找到的资料是这么操作，但是发现第 3 条不执行也行。
 2. 编辑 mobaxterm session，在 `Advanced SSH settings` 中启用 `X11-Forwarding` ，并将 `Remote environment` 改为对应的窗口管理器即可。（我这边是 `DWM desktop`）
 
+## 声音管理器
+
+```bash
+sudo pacman -S alsa-utils pulseaudio pulseaudio-alsa
+```
+
 ## 安装中文字体以及输入法
 
 安装文泉微米黑，`sudo pacman -S wqy-microhei`
+
+安装输入法
+
+```bash
+sudo pacman -S fcitx fcitx-im fcitx-configtool fcitx-googlepinyin fcitx-rime
+```
+
+配置输入法，编辑 `~/.xprofile`
+
+```bash
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+```
+
+## 开发环境
+
+### docker
+
+```bash
+sudo pacman -S docker  //并尽可能安装可选依赖
+sudo gpasswd -a $(whoami) docker   //不用sudo即可运行docker
+sudo systemctl restart docker  //重启docker
+sudo echo "{"registry-mirrors": ["http://hub-mirror.c.163.com"]}" >> /etc/docker/daemon.json  //写入网易镜像源
+sudo systemctl enable docker   //开机自启docker
+```
+
+### nodejs
+
+```bash
+sudo pacman -S nodejs
+sudo pacman -S npm
+npm config set registry https://registry.npm.taobao.org  # 设置 npm 源
+```
+
+### go 配置
+
+安装 go
+
+```bash
+sudo pacman -S go go-tools
+```
+
+配置环境变量 `GOPATH`，可以在用户目录下的 `go/` 文件夹放置 Go 文件，同时为了更好地拉取 Go 相关的软件包，可以配置环境变量 `GOPROXY`，编辑 `~/.xprofile` 文件：
+
+```bash
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+```
 
 ## 其它
 
@@ -452,13 +540,61 @@ make: *** [dwm.o] Error 1
 
 ### some packages
 
-```text
-sl
-lolcat
-toilet
-neofetch
-tree
+```txt
+sl  # 在屏幕上绘制 ASCII 蒸汽机火车
+cmatrix  # 黑客帝国，代码矩阵
+cowfortune  # 名人名言
+lolcat  # 彩色 cat
+toilet  # 用于打印 ASCII 字符串，可以配置字体等
+figlet  # 将文本转换为 ASCII 字符串
+neofetch  # 获取系统信息
+tree  # 打印文件目录
+visual-studio-code-bin  # vscode
+qt5-base qt5-doc qtcreator pkgconf  # qt 开发
+netease-cloud-music  # 网易云音乐
+intellij-idea-community-edition  # idea 社区版
+baidunetdisk-bin  # 百度网盘
+mpv  # 视频播放器
+typora  # markdown 编辑器
+vnote-git  # markdown 笔记编辑器
+obs-studio  # 录屏录音软件
+freedownloadmanager  # 下载软件
+wireshark-qt  # 网络分析器 sudo gpasswd -a $(whoami) wireshark   # 不用sudo权限即可抓网卡
+deepin.com.wechat2  # 微信
+flameshot  # 截图
+```
 
+### kde 美化
+
+```txt
+终端：konsole, yakauke, alacritty
+窗口管理器：kwin
+登录管理器：sddm
+文件管理器：nautilus(可视化)、ranger
+gtk2/3主题：whiteSur
+kde主题：whiteSur
+图标主题：uos20
+SHELL：zsh
+图形显示框架：openGL 3
+网络浏览器：google-chrome, chromium
+沟通：微信(wine)、tim(wine)、linux-qq
+有线音乐：网易云音乐
+音乐/视频播放器：mpv
+网盘：百度网盘
+文章写作：typora(Markdown), vnote
+录屏/录音/直播：obs studio(可视化)、ffmpeg
+截图：scrot、spectatle
+图片查看器：feh
+下载器：FDM(可视化)、aria2、wget、curl、axel
+远程控制：teamviewer
+网络分析：wireshark
+输入法框架：fcitx-pinyin
+wifi管理：networkmanager
+虚拟机：vmbox
+引导程序：grub2
+Aur助手：yay
+文字处理：wps
+系统信息查看：neofetch
 ```
 
 ## 参考
@@ -470,3 +606,5 @@ tree
 [Error when trying to use Xorg: Only console users are allowed to run the X server?](https://unix.stackexchange.com/questions/478742/error-when-trying-to-use-xorg-only-console-users-are-allowed-to-run-the-x-serve)
 
 [Archlinux 安装完后需要做的事情](https://juejin.im/post/6844904021520089102)
+
+[Arch Linux 2020-07 安装kde桌面环境](https://www.jianshu.com/p/5e7726d1cb16)

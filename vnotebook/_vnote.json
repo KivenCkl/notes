@@ -37,10 +37,16 @@
             "name": "sql"
         },
         {
-            "name": "web_blog"
+            "name": "blog"
         },
         {
             "name": "others"
+        },
+        {
+            "name": "job_interview"
+        },
+        {
+            "name": "web_site"
         }
     ],
     "tags": [
