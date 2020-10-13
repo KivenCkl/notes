@@ -47,6 +47,18 @@
         },
         {
             "name": "web_site"
+        },
+        {
+            "name": "DevOps"
+        },
+        {
+            "name": "rust"
+        },
+        {
+            "name": "python"
+        },
+        {
+            "name": "frontend"
         }
     ],
     "tags": [
