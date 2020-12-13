@@ -157,7 +157,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # 对于 UEFI 启动模式
 pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
