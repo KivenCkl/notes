@@ -7,9 +7,6 @@
     "recycle_bin_folder": "_v_recycle_bin",
     "sub_directories": [
         {
-            "name": "_v_recycle_bin"
-        },
-        {
             "name": "blog"
         },
         {
@@ -49,7 +46,7 @@
             "name": "matlab"
         },
         {
-            "name": "others"
+            "name": "reading"
         },
         {
             "name": "play_with_server"
@@ -59,6 +56,9 @@
         },
         {
             "name": "web_site"
+        },
+        {
+            "name": "win"
         }
     ],
     "tags": [
