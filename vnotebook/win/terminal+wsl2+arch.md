@@ -134,7 +134,7 @@ wsl --set-default-version 2
 进入 arch wsl 中后，执行以下命令（root 身份）
 
 ```bash
-passed  # 设置 root 密码
+passwd  # 设置 root 密码
 ```
 
 用 `vim` 或者 `nano` 打开 `/etc/pacman.d/mirrorlist`，将 `China` 下面的源取消注释。
